@@ -1,1 +1,20 @@
-txt
+
+var a = function() {
+return alert
+}
+
+true && a // wywola a bo
+
+if (true) {
+    return a
+}
+
+
+
+
+var lorem_ipsumm = 'loem ipsum'
+
+lorem_ipsum[2] = 'k' // nie podmieni zmiennej bo string to prymityw!
+
+'use strict"
+hoisting <== doczytać!
