@@ -34,7 +34,7 @@ console.log(newTab)
 console.log(newTab.slice(3, 7))
 
 
-function losowe(x) {
+/*function losowe(x) {
 
     for (var i = 0; i < x; i++) {
         newTab[x-1] = Math.floor(Math.random() * 10)
@@ -42,5 +42,5 @@ function losowe(x) {
             return nawTable[x-1]
         }else {losowe}
             }
-}
+}*/
 
