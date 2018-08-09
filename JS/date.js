@@ -13,9 +13,9 @@ var d1 = new Date(),                            //Tue Aug 07 2018 23:18:23 GMT+0
 
     d3 = new Date(0),                           //Thu Jan 01 1970 01:00:00 GMT+0100 (CET) --> [start day - ms]
 
-    d4 = new Date('2018 07 August'),             //Tue Aug 07 2018 00:00:00 GMT+0200 (CEST)
+    d4 = new Date('2018 07 August'),            //Tue Aug 07 2018 00:00:00 GMT+0200 (CEST)
 
-    d_getDate = d4.getDate(),                    //7 --> [day] 
+    d_getDate = d4.getDate(),                   //7 --> [day] 
 
     d_getDay = d4.getDay(),                     //2
 
