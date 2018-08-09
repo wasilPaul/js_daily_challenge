@@ -15,8 +15,8 @@
 	const preObject = document.querySelector("#object");
 	const ulList = document.querySelector("ul")
 
-	//Create refernce
-	const dbRefObject = firebase.database().ref().child("newObject")
+	//Create refernce ....ref("/newObject") is the same as ....ref().child("newObject")
+	const dbRefObject = firebase.database().ref("/newObject")   
 	const dbRefList = dbRefObject.child("hobbies")
 
 	//Sync object changes (event, collback)
@@ -24,7 +24,7 @@
 		preObject.innerText = JSON.stringify(snapshot.val(), null, 3)
 	})
 
-	//Sync list changes (event: child_added -> ONLY ADDED!, )
+	//Sync list changes (event: child_added -> ONLY ADDED!)
 	dbRefList.on("child_added", snapshot => {
 		const li = document.createElement("li")
 		li.innerText = snapshot.val()
