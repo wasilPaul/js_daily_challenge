@@ -13,14 +13,33 @@
 
 	//Get element
 	const preObject = document.querySelector("#object");
+	const ulList = document.querySelector("ul")
 
 	//Create refernce
 	const dbRefObject = firebase.database().ref().child("newObject")
+	const dbRefList = dbRefObject.child("hobbies")
 
 	//Sync object changes (event, collback)
 	dbRefObject.on("value", snapshot => {
 		preObject.innerText = JSON.stringify(snapshot.val(), null, 3)
 	})
 
+	//Sync list changes (event: child_added -> ONLY ADDED!, )
+	dbRefList.on("child_added", snapshot => {
+		const li = document.createElement("li")
+		li.innerText = snapshot.val()
+		li.id = snapshot.key
+		ulList.appendChild(li)
+	})
+
+	dbRefList.on("child_changed", snapshot => {
+		const liChanged = document.querySelector(`#${snapshot.key}`)
+		liChanged.innerText = snapshot.val()
+	})
+
+	dbRefList.on("child_removed", snapshot => {
+		const liToRemove = document.querySelector(`#${snapshot.key}`)
+		liToRemove.remove()
+	})
 
 })()
