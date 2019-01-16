@@ -100,7 +100,7 @@ const codeMorse = str => {
     "'": ".----.",
     ":": "---..."
   };
-  console.log(dictionary[1]);
+  
   return str
     .split(" ")
     .map(word =>
